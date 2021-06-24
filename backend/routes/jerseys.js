@@ -1,14 +1,11 @@
-const mongoose = require("mongoose")
 const express = require("express")
 const router = express.Router()
+const {getJerseys} = require("../controllers/jerseyControllers")
 
 // routes
 // get all jerseys 
-router.get("/", (req, res) =>{
-    res.send("list of jerseys")
-})
-router.get("/list", (req, res) =>{
-    res.send("list of jerseys")
-})
+router.get("/", getJerseys )
+
+router.get("/list", getJerseys)
 
 module.exports = router
